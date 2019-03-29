@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css?family=B612|Open+Sans|Ubuntu|ZCOOL+QingKe+HuangYou");
+/*image credit: https://www.flickr.com/photos/usedfree/16512474046/in/photolist-ra9Kfo-84E1ng-2frDAM-37skj4-3x9Ro3-7L4UdD-S9tify-aRbmcz-nkxpb-DuhWt-2fJ89H-84E1kF-6drMP5-bDCEaF-5BrqHc-fA89PX-8s1yq7-6GqDsV-9XZwvY-8s1ytm-2kK8QR-6j6pfd-8TwRcG-8rXv1R-dLUquP-8MgNzX-rZvKG-aqn7Ay-6mgN8n-3r2qDm-cfqXg9-5TWfaj-93qwyZ-8s1ybL-fDZD3A-mSmH5-8s1yeE-dojsZh-8s1y4q-BCQYrL-btk3H-275HB-nUMB19-aMZgMz-Sowco-dwxSem-t1e9rD-2frG8F-A8FYC-kwiJRF */
+body {
+  background-image: url(../img/treesblackandwhite.jpg);
+  margin: 0 auto;
+  padding: 0;
+  max-width: 80em;
+  padding: 1em 0;
+}
+
+header,
+picture,
+aside,
+article,
+nav,
+footer {
+  background: #eee6e6;
+  padding: 1em;
+}
+
+nav {
+  background-color: #d1dbe0;
+  padding: 0;
+}
+
+header, nav, footer, picture {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1 / 4;
+}
+
+a {
+  text-decoration: none;
+}
+
+a.selected-link {
+  color: #e28528;
+}
+
+/*styles for main page and sub-pages*/
+.grid-landing-page {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1em;
+  -ms-grid-columns: 150px auto 150px;
+  grid-template-columns: 150px auto 150px;
+  -ms-grid-rows: 100px 60px 250px 200px 50px;
+  grid-template-rows: 100px 60px 250px 200px 50px;
+}
+
+.grid-sub-page {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1em;
+  -ms-grid-columns: auto 150px;
+  grid-template-columns: auto 150px;
+  -ms-grid-rows: 100px 50px 300px 50px;
+  grid-template-rows: 100px 50px 300px 50px;
+}
+
+.grid-sub-page picture {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / 2;
+}
+
+.grid-sub-page article {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.grid-sub-page article.grid-text {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-column: 2 / 4;
+}
+
+.grid-sub-page article.grid-text h3 {
+  font-family: "B612", arial;
+  font-size: 32px;
+  color: #e28528;
+}
+
+header, .grid-text, picture, .nav-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+header h3 a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 50px;
+  color: #2a4625;
+  font-family: "B612", arial;
+}
+
+.grid-text {
+  padding: 30px;
+}
+
+.grid-text p {
+  color: #2a4625;
+  font-family: "Open Sans", sans-serif;
+  font-size: 19px;
+}
+
+picture.img-large img {
+  max-width: 100%;
+  height: 230px;
+  padding: 10px;
+}
+
+.nav-text {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 0px 80px 15px 80px;
+}
+
+.nav-text a {
+  padding-right: 30px;
+  font-family: "ZCOOL QingKe HuangYou", cursive;
+  font-size: 26px;
+  background-color: #996767;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.nav-text a:link {
+  color: #eee6e6;
+}
+
+.nav-text a:hover {
+  color: #e28528;
+}
+
+.nav-text a:visited {
+  color: #eee6e6;
+}
+
+footer h5 {
+  font-family: "Ubuntu", sans-serif;
+}
+
+@media screen and (max-width: 680px) {
+  header h3 a {
+    font-size: 30px;
+  }
+  .grid-landing-page {
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 0.5em;
+    -ms-grid-columns: 0px auto;
+    grid-template-columns: 0px auto;
+    -ms-grid-rows: 100px 40px 300px 200px 0px;
+    grid-template-rows: 100px 40px 300px 200px 0px;
+  }
+  .grid-landing-page .grid-text p {
+    font-size: 18px;
+  }
+  .grid-landing-page picture.img-large img {
+    padding: 8px;
+  }
+  .grid-sub-page {
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 0.5em;
+    -ms-grid-columns: 0px auto;
+    grid-template-columns: 0px auto;
+    -ms-grid-rows: 100px 40px 300px 30px;
+    grid-template-rows: 100px 40px 300px 30px;
+  }
+  .grid-sub-page .grid-text p {
+    font-size: 16px;
+  }
+  .grid-sub-page h3 {
+    font-size: 20px;
+  }
+  .grid-sub-page picture.img-large img {
+    padding: 8px;
+  }
+  .nav-text {
+    padding: 5px;
+    margin: 5px;
+  }
+  .nav-text a {
+    font-size: 22px;
+  }
+}
