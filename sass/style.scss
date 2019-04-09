@@ -5,7 +5,7 @@
 @import "file-management/mobile";
 @import "file-management/mixins";
 
-@import url('https://fonts.googleapis.com/css?family=David+Libre|Days+One|ZCOOL+QingKe+HuangYou');
+@import url('https://fonts.googleapis.com/css?family=David+Libre|Federo|Days+One|ZCOOL+QingKe+HuangYou');
 
 //assignment: variables; assignment: complementary colors;
 $text-color-primary: hsla(111, 30%, 21%, 1);
@@ -212,7 +212,7 @@ footer p {
 
   /* if mobile is long enough, style the footer to be detached */
   @media screen and (min-height: 500px){
-    footer {
+    .grid-landing-page footer {
       margin: 30px;
     }
   }

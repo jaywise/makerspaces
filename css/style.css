@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=David+Libre|Days+One|ZCOOL+QingKe+HuangYou");
+@import url("https://fonts.googleapis.com/css?family=David+Libre|Federo|Days+One|ZCOOL+QingKe+HuangYou");
 /*type-scale for root (desktop)
 sets default (ie root), but can be overridden for mobile if fontScale is modified */
 :root {
@@ -236,7 +236,7 @@ footer p {
 }
 
 @media screen and (max-width: 680px) and (min-height: 500px) {
-  footer {
+  .grid-landing-page footer {
     margin: 30px;
   }
 }
