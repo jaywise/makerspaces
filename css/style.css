@@ -1,4 +1,30 @@
-@import url("https://fonts.googleapis.com/css?family=Abhaya+Libre|Alike|Buda|Mukta:800|Quattrocento|Roboto+Slab:700|Tinos:700i|ZCOOL+QingKe+HuangYou");
+@import url("https://fonts.googleapis.com/css?family=David+Libre|Days+One|Federo|Mukta:800|Quattrocento|Roboto+Slab:700|Tinos:700i|ZCOOL+QingKe+HuangYou");
+/*type-scale for root (desktop)
+sets default (ie root), but can be overridden for mobile if fontScale is modified */
+html {
+  font-size: var(--fontScale, 20px);
+}
+
+h1 {
+  font-size: 3.052em;
+}
+
+h2 {
+  font-size: 2.441em;
+}
+
+h3 {
+  font-size: 1.953em;
+}
+
+h4 {
+  font-size: 1.563em;
+}
+
+h5 {
+  font-size: 1.25em;
+}
+
 /*image credit: https://www.flickr.com/photos/usedfree/16512474046/in/photolist-ra9Kfo-84E1ng-2frDAM-37skj4-3x9Ro3-7L4UdD-S9tify-aRbmcz-nkxpb-DuhWt-2fJ89H-84E1kF-6drMP5-bDCEaF-5BrqHc-fA89PX-8s1yq7-6GqDsV-9XZwvY-8s1ytm-2kK8QR-6j6pfd-8TwRcG-8rXv1R-dLUquP-8MgNzX-rZvKG-aqn7Ay-6mgN8n-3r2qDm-cfqXg9-5TWfaj-93qwyZ-8s1ybL-fDZD3A-mSmH5-8s1yeE-dojsZh-8s1y4q-BCQYrL-btk3H-275HB-nUMB19-aMZgMz-Sowco-dwxSem-t1e9rD-2frG8F-A8FYC-kwiJRF */
 body {
   background-image: url(../img/treesblackandwhite.jpg);
@@ -79,8 +105,7 @@ a.selected-link {
 }
 
 .grid-sub-page article.grid-text h3 {
-  font-family: "Alike", Arial;
-  font-size: 32px;
+  font-family: "Federo", sans-serif;
   color: #e28528;
 }
 
@@ -100,9 +125,8 @@ header h3 a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-size: 50px;
   color: #2a4625;
-  font-family: "Alike", Arial;
+  font-family: "Days One", Arial;
 }
 
 .grid-text {
@@ -111,8 +135,7 @@ header h3 a {
 
 .grid-text p {
   color: #2a4625;
-  font-family: "Buda", sans-serif;
-  font-size: 19px;
+  font-family: "David Libre", cursive;
 }
 
 picture.img-large img {
@@ -131,7 +154,7 @@ picture.img-large img {
 
 .nav-text a {
   padding-right: 30px;
-  font-family: "ZCOOL QingKe HuangYou", cursive;
+  font-family: "ZCOOL QingKe HuangYou", sans-serif;
   font-size: 26px;
   background-color: #996767;
   padding: 5px;
@@ -150,13 +173,13 @@ picture.img-large img {
   color: #eee6e6;
 }
 
-footer h5 {
-  font-family: "Abhaya Libre", sans-serif;
+footer p {
+  font-family: "Federo", sans-serif;
 }
 
 @media screen and (max-width: 680px) {
-  header h3 a {
-    font-size: 30px;
+  html {
+    --fontScale: 16px;
   }
   .grid-landing-page {
     display: -ms-grid;
@@ -166,9 +189,6 @@ footer h5 {
     grid-template-columns: 0px auto;
     -ms-grid-rows: 100px 40px 300px 200px 0px;
     grid-template-rows: 100px 40px 300px 200px 0px;
-  }
-  .grid-landing-page .grid-text p {
-    font-size: 18px;
   }
   .grid-landing-page picture.img-large img {
     padding: 8px;
@@ -182,13 +202,7 @@ footer h5 {
     -ms-grid-rows: 100px 40px 300px 30px;
     grid-template-rows: 100px 40px 300px 30px;
   }
-  .grid-sub-page .grid-text p {
-    font-size: 16px;
-  }
-  .grid-sub-page h3 {
-    font-size: 20px;
-  }
-  .grid-sub-page picture.img-large img {
+  .grid-sub-page .grid-text picture.img-large img {
     padding: 8px;
   }
   .nav-text {
