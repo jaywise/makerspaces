@@ -21,28 +21,15 @@ $body-font: 'David Libre', cursive;
 
 /*type-scale for root (desktop)
 sets default (ie root), but can be overridden for mobile if fontScale is modified */
-html{
-  font-size: var(--fontScale, 20px);
-}
-h1 {
-  font-size: 3.052em;
-}
-h2 {
-  font-size: 2.441em;
-}
-h3 {
-  font-size: 1.953em;
-}
-h4 {
-  font-size: 1.563em;
-}
-h5 {
-  font-size: 1.25em;
-}
 
+:root {
+  --fontBaseSize: 20px;
+  --fontScale: 1.25;
+}
 
 /*image credit: https://www.flickr.com/photos/usedfree/16512474046/in/photolist-ra9Kfo-84E1ng-2frDAM-37skj4-3x9Ro3-7L4UdD-S9tify-aRbmcz-nkxpb-DuhWt-2fJ89H-84E1kF-6drMP5-bDCEaF-5BrqHc-fA89PX-8s1yq7-6GqDsV-9XZwvY-8s1ytm-2kK8QR-6j6pfd-8TwRcG-8rXv1R-dLUquP-8MgNzX-rZvKG-aqn7Ay-6mgN8n-3r2qDm-cfqXg9-5TWfaj-93qwyZ-8s1ybL-fDZD3A-mSmH5-8s1yeE-dojsZh-8s1y4q-BCQYrL-btk3H-275HB-nUMB19-aMZgMz-Sowco-dwxSem-t1e9rD-2frG8F-A8FYC-kwiJRF */
 body{
+
     background-image: url(../img/treesblackandwhite.jpg);
     margin: 0 auto;
     padding: 0;
@@ -52,13 +39,33 @@ body{
     --imagePadding: 5px; //assignment 2: global variable to be re-calculated upon media query
 }
 
+/* modular scaling based upon unit of fontScale */
+p{
+    font-size: var(--fontBaseSize);
+  }
+h5 {
+    font-size: calc(var(--fontBaseSize) * var(--fontScale));
+  }
+h4 {
+    font-size: calc(var(--fontBaseSize) * var(--fontScale) * var(--fontScale));
+  }         
+h3 {
+    font-size: calc(var(--fontBaseSize) * var(--fontScale) * var(--fontScale) * var(--fontScale));
+  }
+h2 {
+    font-size: calc(var(--fontBaseSize) * var(--fontScale) * var(--fontScale) * var(--fontScale) * var(--fontScale));
+  }
+h1 {
+    font-size: calc(var(--fontBaseSize) * var(--fontScale) * var(--fontScale) * var(--fontScale) * var(--fontScale) * var(--fontScale));
+  }
+
 header,
 picture,
 aside,
 article,
 nav,
 footer {
-  background: approach-half-neutral($background-color-primary); //assignment: function with variable;
+  background: approach-half-neutral($background-color-primary); 
   padding: 1em;
   border-radius: 0.2em;
 }
@@ -85,7 +92,7 @@ a {
   grid-template-rows: 100px 60px auto 200px 50px;
 }
 
-.grid-sub-page {  //assignment: 3-layer nesting;
+.grid-sub-page {  
   @include grid-setup;
   grid-template-columns: auto 150px;
   grid-template-rows: 100px 50px 300px 50px;
@@ -98,7 +105,6 @@ a {
   article.grid-text {
       h3{
         font-family: $accent-font;
-        // font-size: 32px;
         color: approach-half-neutral($accent-color);
       }
       grid-column: 2 / 4;
@@ -111,12 +117,10 @@ a {
   justify-content: center;
 }
 
-//assignment: nested code
 header {
   @extend %grid-sub-container;
   h3 a {
     display:flex;
-    // font-size: 50px;
     color: $text-color-primary;
     font-family: $primary-font;
   }
@@ -127,7 +131,6 @@ header {
   p{
     color: $text-color-primary;
     font-family: $body-font;
-    // font-size: 19px;
   }
   padding: var(--textPadding, 30px);
 }
@@ -150,7 +153,7 @@ picture {
   padding: 0px 80px 15px 80px;
 }
 
-.nav-text a {   //assignewnt:nesting
+.nav-text a {   
   padding-right: 30px;
   font-family: $secondary-font;
   font-size: 26px;
@@ -174,15 +177,10 @@ footer p {
 
 //mobile
 @media screen and (max-width: 680px){   //assignment 2: medoia query by type, "screen"
-  
-
-  
-  html {
-    --fontScale: 16px; // assignment 2: sets base of scaling font sizes for mobile
-    --mobileScaleIndex: 0.5; //assignment 2: sets local scale for padding;
-  }
 
   body{
+    --mobileScaleIndex: 0.5; //assignment 2: sets local scale for padding;
+    --fontBaseSize: 16px; // assignment 2: sets base of scaling font sizes for mobile
     --bodyMaxWidth: 40em; //assignment 2: media query with custom variable
     --bodyPadding: 0em;  //assignment 2: media query with custom variable
   }
