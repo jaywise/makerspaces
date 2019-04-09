@@ -5,7 +5,7 @@
 @import "file-management/mobile";
 @import "file-management/mixins";
 
-@import url('https://fonts.googleapis.com/css?family=David+Libre|Days+One|Federo|Mukta:800|Quattrocento|Roboto+Slab:700|Tinos:700i|ZCOOL+QingKe+HuangYou');
+@import url('https://fonts.googleapis.com/css?family=David+Libre|Days+One|ZCOOL+QingKe+HuangYou');
 
 //assignment: variables; assignment: complementary colors;
 $text-color-primary: hsla(111, 30%, 21%, 1);
@@ -21,25 +21,11 @@ $body-font: 'David Libre', cursive;
 
 /*type-scale for root (desktop)
 sets default (ie root), but can be overridden for mobile if fontScale is modified */
-
 :root {
   --fontBaseSize: 20px;
   --fontScale: 1.25;
 }
-
-/*image credit: https://www.flickr.com/photos/usedfree/16512474046/in/photolist-ra9Kfo-84E1ng-2frDAM-37skj4-3x9Ro3-7L4UdD-S9tify-aRbmcz-nkxpb-DuhWt-2fJ89H-84E1kF-6drMP5-bDCEaF-5BrqHc-fA89PX-8s1yq7-6GqDsV-9XZwvY-8s1ytm-2kK8QR-6j6pfd-8TwRcG-8rXv1R-dLUquP-8MgNzX-rZvKG-aqn7Ay-6mgN8n-3r2qDm-cfqXg9-5TWfaj-93qwyZ-8s1ybL-fDZD3A-mSmH5-8s1yeE-dojsZh-8s1y4q-BCQYrL-btk3H-275HB-nUMB19-aMZgMz-Sowco-dwxSem-t1e9rD-2frG8F-A8FYC-kwiJRF */
-body{
-
-    background-image: url(../img/treesblackandwhite.jpg);
-    margin: 0 auto;
-    padding: 0;
-    max-width: var(--bodyMaxWidth, 80em); //assignment 2: custom vaiable declared that is modified in media query
-    padding: var(--bodyPadding, 1em) 0; //assignment 2: custom vaiable declared that is modified in media query
-    --textPadding: 30px; //assignment 2: global variable to be re-calculated upon media query
-    --imagePadding: 5px; //assignment 2: global variable to be re-calculated upon media query
-}
-
-/* modular scaling based upon unit of fontScale */
+/* modular scaling based upon unit of fontScale variable*/
 p{
     font-size: var(--fontBaseSize);
   }
@@ -58,6 +44,17 @@ h2 {
 h1 {
     font-size: calc(var(--fontBaseSize) * var(--fontScale) * var(--fontScale) * var(--fontScale) * var(--fontScale) * var(--fontScale));
   }
+
+/*image credit: https://www.flickr.com/photos/usedfree/16512474046/in/photolist-ra9Kfo-84E1ng-2frDAM-37skj4-3x9Ro3-7L4UdD-S9tify-aRbmcz-nkxpb-DuhWt-2fJ89H-84E1kF-6drMP5-bDCEaF-5BrqHc-fA89PX-8s1yq7-6GqDsV-9XZwvY-8s1ytm-2kK8QR-6j6pfd-8TwRcG-8rXv1R-dLUquP-8MgNzX-rZvKG-aqn7Ay-6mgN8n-3r2qDm-cfqXg9-5TWfaj-93qwyZ-8s1ybL-fDZD3A-mSmH5-8s1yeE-dojsZh-8s1y4q-BCQYrL-btk3H-275HB-nUMB19-aMZgMz-Sowco-dwxSem-t1e9rD-2frG8F-A8FYC-kwiJRF */
+body{
+    background-image: url(../img/treesblackandwhite.jpg);
+    margin: 0 auto;
+    padding: 0;
+    max-width: var(--bodyMaxWidth, 80em); //assignment 2: custom vaiable declared that is modified in media query
+    padding: var(--bodyPadding, 1em) 0; //assignment 2: custom vaiable declared that is modified in media query
+    --textPadding: 30px; //assignment 2: global variable to be re-calculated upon media query
+    --imagePadding: 5px; //assignment 2: global variable to be re-calculated upon media query
+}
 
 header,
 picture,
@@ -78,6 +75,7 @@ nav{
 header, nav, footer, picture {
   grid-column: 1 / 4;
 }
+
 a {
   text-decoration: none;
   &.selected-link{
@@ -143,7 +141,6 @@ picture {
     height: 230px;
     padding: var(--imagePadding, 10px);
   }
-
 }
 
 .nav-text { 
@@ -175,9 +172,11 @@ footer p {
   font-family: $accent-font;
 }
 
+
 //mobile
 @media screen and (max-width: 680px){   //assignment 2: medoia query by type, "screen"
 
+  /* sets scales and padding for mobile; calcultions occur in class declaration*/
   body{
     --mobileScaleIndex: 0.5; //assignment 2: sets local scale for padding;
     --fontBaseSize: 16px; // assignment 2: sets base of scaling font sizes for mobile
@@ -208,6 +207,13 @@ footer p {
     margin: 5px;
     a {
       font-size: 22px;
+    }
+  }
+
+  /* if mobile is long enough, style the footer to be detached */
+  @media screen and (min-height: 500px){
+    footer {
+      margin: 30px;
     }
   }
 
