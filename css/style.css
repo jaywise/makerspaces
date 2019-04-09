@@ -32,6 +32,8 @@ body {
   padding: 0;
   max-width: var(--bodyMaxWidth, 80em);
   padding: var(--bodyPadding, 1em) 0;
+  --textPadding: 30px;
+  --imagePadding: 5px;
 }
 
 header,
@@ -187,7 +189,7 @@ footer p {
 @media screen and (max-width: 680px) {
   html {
     --fontScale: 16px;
-    --mobileScaleIndex: 0.7;
+    --mobileScaleIndex: 0.5;
   }
   body {
     --bodyMaxWidth: 40em;
@@ -212,11 +214,8 @@ footer p {
     grid-gap: 0.5em;
     -ms-grid-columns: 0 auto;
     grid-template-columns: 0 auto;
-    -ms-grid-rows: 100px 40px 300px 30px;
-    grid-template-rows: 100px 40px 300px 30px;
-  }
-  .grid-sub-page picture.img-large img {
-    padding: calc(var(--imagePadding) * var(--mobileScaleIndex));
+    -ms-grid-rows: 100px 40px 300px 50px;
+    grid-template-rows: 100px 40px 300px 50px;
   }
   .grid-sub-page .grid-text {
     padding: calc(var(--textPadding) * var(--mobileScaleIndex));
